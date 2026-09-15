@@ -9,6 +9,10 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: github-pages-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   build:
     name: Gerar site
@@ -37,9 +41,6 @@ jobs:
     permissions:
       pages: write
       id-token: write
-    concurrency:
-      group: github-pages
-      cancel-in-progress: false
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

@@ -2,7 +2,7 @@ title: "Códigos e Ideias"
 description: Anotações, ideias e aprendizados.
 lang: pt-BR
 url: "https://blog.felipecavalca.dev"
-baseurl: "/blog"
+baseurl: ""
 repository_url: "https://github.com/Felipe-Cavalca/blog"
 timezone: America/Sao_Paulo
 permalink: /posts/:title/
