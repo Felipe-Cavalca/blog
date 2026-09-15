@@ -1,0 +1,65 @@
+name: Enviar um post completo
+description: Cole seu artigo em Markdown aqui, sem precisar fazer fork ou criar um arquivo.
+title: "[Post] "
+body:
+  - type: markdown
+    attributes:
+      value: "Envie seu texto e os créditos abaixo. Felipe decide o que publicar conforme o que considerar relevante. Após aprovação, o texto será preparado em um PR com a autoria preservada. Esta issue não publica o post automaticamente."
+  - type: input
+    id: titulo
+    attributes:
+      label: Título do post
+    validations:
+      required: true
+  - type: input
+    id: autor
+    attributes:
+      label: Nome de quem escreveu
+      description: Será usado na autoria do artigo.
+    validations:
+      required: true
+  - type: input
+    id: github
+    attributes:
+      label: Usuário no GitHub (opcional)
+      description: Sem @ ou URL. Preencha se quiser vincular sua autoria ao perfil.
+  - type: textarea
+    id: resumo
+    attributes:
+      label: Resumo
+      description: Apresente em poucas palavras o que o leitor vai encontrar.
+    validations:
+      required: true
+  - type: textarea
+    id: conteudo
+    attributes:
+      label: Conteúdo completo do post
+      description: Cole o artigo em Markdown. Use títulos, listas, links, imagens e blocos de código; não precisa de cabeçalho YAML.
+      placeholder: |
+        Primeiro parágrafo do artigo.
+
+        ## Um subtítulo
+
+        Continue seu texto aqui.
+    validations:
+      required: true
+  - type: textarea
+    id: fontes
+    attributes:
+      label: Fontes e referências (opcional)
+      description: Informe o título e o link de cada fonte usada no texto. Para livros ou outras referências sem link, informe os dados da obra.
+      placeholder: |
+        - Título do artigo — https://exemplo.com/artigo
+        - Título do livro — autor, edição e ano
+  - type: textarea
+    id: creditos
+    attributes:
+      label: Créditos adicionais (opcional)
+      description: Informe quem sugeriu o tema e quem efetivamente revisou ou colaborou. Para cada revisor, informe o nome e, opcionalmente, o usuário no GitHub (sem @ ou URL). Revisão não equivale à aprovação editorial.
+  - type: checkboxes
+    id: aprovacao
+    attributes:
+      label: Critério de publicação
+      options:
+        - label: Entendo que a aprovação final é somente do Felipe, conforme o que ele considerar relevante, e que enviar o texto não garante publicação.
+          required: true
