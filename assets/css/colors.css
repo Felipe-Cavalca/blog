@@ -14,7 +14,25 @@
   --danger: #dc2626;
 }
 
-/* Aplique data-theme="dark" no elemento <html> para ativar. */
+/* Respeita automaticamente a preferência de tema definida no sistema. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --bg: #0b1120;
+    --surface: #111827;
+    --surface-2: #1e293b;
+    --text: #f1f5f9;
+    --text-muted: #94a3b8;
+    --border: #334155;
+    --primary: #60a5fa;
+    --primary-hover: #93c5fd;
+    --success: #4ade80;
+    --warning: #fbbf24;
+    --danger: #f87171;
+  }
+}
+
+/* Mantém compatibilidade com a ativação explícita já existente. */
 [data-theme="dark"] {
   color-scheme: dark;
   --bg: #0b1120;
