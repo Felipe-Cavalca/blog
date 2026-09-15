@@ -1,0 +1,30 @@
+---
+layout: default
+title: Início
+---
+<section class="home-intro" aria-labelledby="intro-title">
+  <p class="eyebrow">Um espaço para compartilhar</p>
+  <h1 id="intro-title">Ideias que merecem<br>ficar por escrito.</h1>
+  <p>Projetos, descobertas e aprendizados — uma anotação de cada vez.</p>
+</section>
+<section aria-labelledby="posts-title">
+<div class="section-heading"><h2 id="posts-title">Últimos posts</h2></div>
+<ul class="post-list">
+  {% for post in site.posts %}
+  <li class="post-card">
+    <article>
+    <div class="post-meta">
+    {% include author.html post=post %}
+    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%d/%m/%Y' }}</time>
+    {% for category in post.categories %}<span class="category">{{ category | escape }}</span>{% endfor %}
+    </div>
+    <h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+    <div class="post-excerpt">{{ post.excerpt }}</div>
+    <a class="read-more" href="{{ post.url | relative_url }}" aria-label="Ler post: {{ post.title | escape }}">Ler post <span aria-hidden="true">↗</span></a>
+    </article>
+  </li>
+  {% else %}
+  <li class="empty-state">Os primeiros textos chegam em breve.</li>
+  {% endfor %}
+</ul>
+</section>

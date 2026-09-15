@@ -1,0 +1,53 @@
+/* Paleta principal: tema claro por padrão. */
+:root {
+  color-scheme: light;
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --surface-2: #f1f5f9;
+  --text: #0f172a;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --success: #16a34a;
+  --warning: #d97706;
+  --danger: #dc2626;
+}
+
+/* Aplique data-theme="dark" no elemento <html> para ativar. */
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0b1120;
+  --surface: #111827;
+  --surface-2: #1e293b;
+  --text: #f1f5f9;
+  --text-muted: #94a3b8;
+  --border: #334155;
+  --primary: #60a5fa;
+  --primary-hover: #93c5fd;
+  --success: #4ade80;
+  --warning: #fbbf24;
+  --danger: #f87171;
+}
+
+/* Liga os componentes existentes à paleta acima. */
+:root, [data-theme="dark"] {
+  --background: var(--bg);
+  --surface-soft: var(--surface-2);
+  --muted: var(--text-muted);
+  --accent: var(--primary);
+  --accent-hover: var(--primary-hover);
+  --accent-soft: var(--surface-2);
+  --on-accent: var(--bg);
+  --border-hover: var(--primary);
+  --shadow: color-mix(in srgb, var(--text) 8%, transparent);
+  --selection-background: var(--primary);
+  --selection-text: var(--bg);
+  --code-background: var(--surface-2);
+  --code-text: var(--text);
+  --code-comment: var(--text-muted);
+  --code-keyword: var(--primary);
+  --code-string: var(--success);
+  --code-number: var(--warning);
+  --code-function: var(--text);
+}

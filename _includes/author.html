@@ -1,0 +1,6 @@
+{% assign author = include.post.author %}
+{% if author and author != empty %}
+<span class="post-author">Escrito por {% if include.post.author_github and include.post.author_github != empty %}<a href="https://github.com/{{ include.post.author_github | uri_escape | escape }}">{{ author | escape }}</a>{% else %}{{ author | escape }}{% endif %}{% if include.post.reviewed_by and include.post.reviewed_by != empty %}, revisado por {% include reviewers.html reviewers=include.post.reviewed_by %}{% endif %}.</span>
+{% else %}
+<span class="post-author">Autoria não informada.</span>
+{% endif %}

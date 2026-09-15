@@ -1,0 +1,16 @@
+{%- assign reviewers = include.reviewers -%}
+{%- if reviewers.first -%}
+  {%- for reviewer in reviewers -%}
+    {%- assign reviewer_name = reviewer.name | default: reviewer -%}
+    {%- if reviewer.github and reviewer.github != empty -%}
+      <a href="https://github.com/{{ reviewer.github | uri_escape | escape }}">{{ reviewer_name | escape }}</a>
+    {%- else -%}
+      {{- reviewer_name | escape -}}
+    {%- endif -%}
+    {%- unless forloop.last -%}
+      {%- if forloop.rindex == 2 %} e {% else %}, {% endif -%}
+    {%- endunless -%}
+  {%- endfor -%}
+{%- else -%}
+  {{- reviewers | escape -}}
+{%- endif -%}

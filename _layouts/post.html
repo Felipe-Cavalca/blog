@@ -1,0 +1,38 @@
+---
+layout: default
+---
+<article class="post">
+  <header class="post-header">
+    <a class="back-link" href="{{ '/' | relative_url }}">← Todos os posts</a>
+    <h1>{{ page.title | escape }}</h1>
+    <div class="post-meta">
+      {% include author.html post=page %}
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%d/%m/%Y' }}</time>
+      {% for category in page.categories %}<span class="category">{{ category | escape }}</span>{% endfor %}
+    </div>
+  </header>
+  <div class="post-content">{{ content }}</div>
+  {% if page.sources.size > 0 %}
+  <section class="post-sources" aria-labelledby="sources-title">
+    <h2 id="sources-title">Fontes e referências</h2>
+    <ul>
+      {% for source in page.sources %}
+      {% assign source_url = source.url | default: '' | strip %}
+      {% assign https_prefix = source_url | slice: 0, 8 | downcase %}
+      {% assign http_prefix = source_url | slice: 0, 7 | downcase %}
+      <li>{% if https_prefix == 'https://' or http_prefix == 'http://' %}<a href="{{ source_url | escape }}">{{ source.title | default: source_url | escape }}</a>{% else %}{{ source.title | default: source_url | escape }}{% endif %}</li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+  {% if page.contributors.size > 0 %}
+  <section class="post-contributors" aria-labelledby="contributors-title">
+    <h2 id="contributors-title">Contribuições</h2>
+    <ul>
+      {% for contributor in page.contributors %}
+      <li>{% if contributor.github and contributor.github != empty %}<a href="https://github.com/{{ contributor.github | uri_escape | escape }}">{{ contributor.name | escape }}</a>{% else %}{{ contributor.name | escape }}{% endif %}{% if contributor.contribution %} — {{ contributor.contribution | escape }}{% endif %}</li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+</article>
