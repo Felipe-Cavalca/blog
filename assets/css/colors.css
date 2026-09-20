@@ -33,7 +33,7 @@
 }
 
 /* Mantém compatibilidade com a ativação explícita já existente. */
-[data-theme="dark"] {
+[data-theme='dark'] {
   color-scheme: dark;
   --bg: #0b1120;
   --surface: #111827;
@@ -49,7 +49,8 @@
 }
 
 /* Liga os componentes existentes à paleta acima. */
-:root, [data-theme="dark"] {
+:root,
+[data-theme='dark'] {
   --background: var(--bg);
   --surface-soft: var(--surface-2);
   --muted: var(--text-muted);

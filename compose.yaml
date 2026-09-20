@@ -6,7 +6,7 @@ services:
       - .:/site
       - bundle:/usr/local/bundle
     ports:
-      - "127.0.0.1:4000:4000"
+      - '127.0.0.1:4000:4000'
     command: >-
       bash -c "bundle install && bundle exec jekyll serve
       --host 0.0.0.0 --port 4000 --force_polling --strict_front_matter"
