@@ -1,10 +1,10 @@
 name: Enviar um post completo
 description: Cole seu artigo em Markdown aqui, sem precisar fazer fork ou criar um arquivo.
-title: "[Post] "
+title: '[Post] '
 body:
   - type: markdown
     attributes:
-      value: "Envie seu texto e os créditos abaixo. Felipe decide o que publicar conforme o que considerar relevante. Após aprovação, o texto será preparado em um PR com a autoria preservada. Esta issue não publica o post automaticamente."
+      value: 'Envie seu texto e os créditos abaixo. Felipe decide o que publicar conforme o que considerar relevante. Após aprovação, o texto será preparado em um PR com a autoria preservada. Esta issue não publica o post automaticamente.'
   - type: input
     id: titulo
     attributes:

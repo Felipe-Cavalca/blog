@@ -1,10 +1,10 @@
 ---
-title: "Do que se trata este blog?"
+title: 'Do que se trata este blog?'
 date: 2026-09-13 18:00:00 -0300
-description: "Um espaço para registrar ideias, projetos e aprendizados sobre desenvolvimento de software e tecnologia."
+description: 'Um espaço para registrar ideias, projetos e aprendizados sobre desenvolvimento de software e tecnologia.'
 categories: [blog]
-author: "Felipe"
-author_github: "Felipe-Cavalca"
+author: 'Felipe'
+author_github: 'Felipe-Cavalca'
 ---
 
 Este blog é um espaço para registrar **ideias, projetos e aprendizados** que considero interessantes o suficiente para não deixar apenas na minha cabeça.

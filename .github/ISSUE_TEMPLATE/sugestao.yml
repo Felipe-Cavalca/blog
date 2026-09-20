@@ -1,10 +1,10 @@
 name: Sugerir um tema
 description: Conte o que você gostaria de ver no blog, sem criar arquivos.
-title: "[Sugestão] "
+title: '[Sugestão] '
 body:
   - type: markdown
     attributes:
-      value: "A aprovação final é sempre do Felipe, conforme o que ele considerar relevante para o blog. Enviar uma sugestão não garante publicação ou prazo."
+      value: 'A aprovação final é sempre do Felipe, conforme o que ele considerar relevante para o blog. Enviar uma sugestão não garante publicação ou prazo.'
   - type: input
     id: credito
     attributes:
